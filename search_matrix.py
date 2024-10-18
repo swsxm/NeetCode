@@ -5,12 +5,11 @@ class Solution:
         row = 0
         while l <= r:
             m = int((r+l)/2)
-            row = m
-            print(row)
             if matrix[m][0] > target:
                 r = m-1
             elif matrix[m][0] < target: 
                 l = m+1
+                row = m
             else:
                 return True
         l, r = 0, len(matrix[row])-1
