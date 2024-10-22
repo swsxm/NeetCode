@@ -14,9 +14,16 @@ class Solution:
                 r += 1
         return max_profit
 
+    def maxProfit2(self, prices: List[int]) -> int:
+        max_profit = 0
+        low = prices[0]
+
+        for price in prices:
+            if price < low:
+                low = price
+            max_profit = max(price-low, max_profit)
+        return max_profit
+            
+
 Test = Solution()
-print(Test.maxProfit([10,8,7,5,2]))
-
-
-
-        
+print(Test.maxProfit2([10,8,7,5,2]))
