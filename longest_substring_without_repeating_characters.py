@@ -1,5 +1,5 @@
 class Solution:
-    def lengthOfLongestSubstring(self, s: str) -> int:
+    def lengthOfLongestSubstring2(self, s: str) -> int:
         # O(n**2)
         if len(s) == 1:
             return 1
@@ -14,10 +14,23 @@ class Solution:
                     break
             max_count = max(max_count, len(lookup))
             lookup.clear()
-
         return max_count
+    
+    # O(n)
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        lookup = set()
+        count = 0
+        l = 0
+
+        for i in range(0, len(s)):
+            while s[i] in lookup:
+                lookup.remove(s[l])
+                l+=1
+            lookup.add(s[i])
+            count = max(count, i-l+1) 
+
+        return count
 
 Test = Solution()
-print(Test.lengthOfLongestSubstring(s="zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA"))
-
+print(Test.lengthOfLongestSubstring("abcabcbb"))
         
