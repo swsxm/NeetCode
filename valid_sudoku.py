@@ -37,4 +37,4 @@ board = [
     [".", ".", ".", ".", "8", ".", ".", "7", "9"],
 ]
 
-print(Test.isValidSudoku(board))  # Output: True or False
+print(Test.isValidSudoku(board))
