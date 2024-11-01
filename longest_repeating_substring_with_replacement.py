@@ -14,6 +14,6 @@ class Solution():
             longest_seq = max(longest_seq, i - l + 1)
         return longest_seq
 Test = Solution()
-print(Test.characterReplacement("AABB", 2))
+print(Test.characterReplacement("AAABABB", 1))
 
 
