@@ -6,6 +6,7 @@
 
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        # O(n)
         length = 0
         curr = head
 
