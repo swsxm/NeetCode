@@ -15,7 +15,7 @@ class Solution:
         ret = []
         while stack:
             sub_list = []
-            for _ in stack:
+            for _ in range(len(stack)):
                 element = stack.popleft()
                 if element.left is not None:
                     stack.append(element.left)
