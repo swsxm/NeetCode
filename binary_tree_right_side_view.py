@@ -22,3 +22,22 @@ class Solution:
                     tmp.append(node.right)
             stack = tmp
         return output
+
+    def rightSideView2(self, root: Optional[TreeNode]) -> List[int]:
+        if not root:
+            return []
+        level_check = set()
+        output = []
+
+        def dfs(node, level):
+            if not node:
+                return
+            if level not in level_check:
+                level_check.add(level)
+                output.append(node.val)
+
+            dfs(node.right, level + 1)
+            dfs(node.left, level + 1)
+
+        dfs(root, 1)
+        return output
