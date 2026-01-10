@@ -13,9 +13,6 @@ class Solution:
             return res 
         return min(dfs(0), dfs(1))
 
-test = Solution()
-print(test.minCostClimbingStairs([1,2,3]))
-
 
 
 
